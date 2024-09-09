@@ -13,4 +13,4 @@ pycsp3
 ijson
 matplotlib
 duckdb
-tensorboard
+gdown

@@ -1,3 +1,32 @@
+# One Model Any Conjunctive Query
+
+This repository contains codebase for the paper "One Model, Any Conjunctive Query: Graph Neural Networks for Answering Complex Queries over Knowledge Graphs". The code is based on [ANYCSP](https://github.com/toenshoff/ANYCSP).
+
+## Setting up the environment
+
+Create a new virtual environment and install dependencies with pip/conda (change the pytorch version if needed):
+```
+conda create --name anycq python=3.10
+conda activate anycq
+pip install torch==2.0.0 torchvision==0.15.1 torchaudio==2.0.1
+pip install -r requirements.txt -f https://data.pyg.org/whl/torch-2.0.0+cu117.html
+```
+
+## Download models and training data
+
+To download the training data, in the main folder run:
+```
+gdown https://drive.google.com/uc?id=1Ib7HE4oBBCDeH9yeu3dfwVk3YIHZ4kSO
+unzip training_data.zip
+```
+Alternatively, the data can be accessed directly on [Google Drive](https://drive.google.com/file/d/1Ib7HE4oBBCDeH9yeu3dfwVk3YIHZ4kSO/view). Put each `train_qaa.json` file in the correct subfolder of `data`.
+
+For downloading models' checkpoints, execute:
+```
+gdown https://drive.google.com/uc?id=1XhtwwmcbWhatS7K6VIzvNr5EcJIJQqZq
+unzip models.zip
+```
+or access them manually on [Google Drive](https://drive.google.com/file/d/1XhtwwmcbWhatS7K6VIzvNr5EcJIJQqZq/view?usp=sharing).
 
 
 ## Training AnyCQ
@@ -16,7 +45,7 @@ We provide three validation scripts: for QAR, small QAC and large QAC splits.
 ### QAR
 AnyCQ can be tested on the QAR task by running the `test_anycq_qar.py` script:
 ```
-python test_anycq_qar.py --model_dir "models/FB15k-237/anycq/" --model_name "_checkpoint_350000" --config_file "configs/model/model_FB15k-237_qar.json" --exp_name "Test_FB15k-237_4hub_" --n_pivots 3
+python test_anycq_qar.py --model_dir "models/FB15k-237/anycq/" --model_name "_checkpoint_350000" --config_file "configs/model/model_FB15k-237_qar.json" --exp_name "Test_FB15k-237_3hub_" --n_pivots 3
 ```
 where the arguments are responsible for:
 - `model_dir`: path to the pre-trained model checkpoint
@@ -37,13 +66,20 @@ python test_anycq_qar.py --model_dir "models/FB15k-237/anycq/" --model_name "_ch
 ``` 
 
 ### QAC
+We split the QAC evaluation into two parts, considering small and large splits separately. To run testing on simple queries:
 ```
 # Small QAC
-
-
-# Large QAC
-python test_anycq_qac.py --model_dir "models/FB15k-237-EFO1/anycq/" --model_name "_checkpoint_350000" --config_file "configs/model/model_NELL_qac.json" --exp_name "QAC_Test_NELL_5hub_0_" --gen_type 5hub --end 75
+python test_anycq_qac_small.py --model_dir "models/FB15k-237/anycq/" --model_name "_checkpoint_350000" --config_file "configs/model/model_FB15k-237_qac_small.json" --exp_name "Test_small_QAC_FB15k-237_"
 ```
+
+Running QAC testing on large splits requires one additional parameter `--gen_type`, taking values in `[3hub, 4hub, 5hub]`, depending on the evaluated split.
+
+```
+# Large QAC
+python test_anycq_qac.py --model_dir "models/NELL/anycq/" --model_name "_checkpoint_200000" --config_file "configs/model/model_NELL_qac.json" --exp_name "QAC_Test_NELL_5hub_" --gen_type 5hub --end 75
+```
+
+The purpose of each flag is identical to the QAR setting. Once again, defining `--start/--end` flags, one can modify the range of processed queries.
 
 ## Testing the SQL Engine
 To test the performance of the SQL DuckDB engine for the QAC task, simply run:
@@ -56,4 +92,11 @@ Similarly, to the performance on the QAR benchmarks, execute:
 ```
 # For dataset FB15k-237-QAR and the split 3hub:
 python test_sql_qar.py --dataset FB15k-237 --gen_type 3hub
+```
+
+## Testing QTO/FIT
+
+The neuro-symbolic CQA approaches QTO and FIT can be tested on the small QAC splits using the script:
+```
+python test_reasoners_qac.py
 ```
