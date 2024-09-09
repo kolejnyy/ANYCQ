@@ -121,7 +121,7 @@
 
             "perfect": {
                 "type": "PerfeCT",
-                "graph_path": "data/FB15k-237/valid_kg.tsv"
+                "graph_path": "data/FB15k-237-QAC/valid_kg.tsv"
             },
 
             "scaling_rule": "fit",

@@ -1,5 +1,5 @@
 {
-	"folder_path": 	"data/FB15k-237-EFO1",
+	"folder_path": 	"data/FB15k-237-QAC",
 	"data_files":	[
 		"qac_test_type0001.json",
 		"qac_test_type0002.json",
@@ -16,7 +16,7 @@
 		"type" : "CQPred",
 		"predictor": {
 			"type": "ComplEx",
-			"load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+			"load_path": "models/FB15k-237/predictor/ComplEx_pretrained.pth",
 			
 			"tau": 5,
 
@@ -27,7 +27,7 @@
 
 		"perfect": {
 			"type": "PerfeCT",
-			"graph_path": "data/FB15k-237-EFO1/valid_kg.tsv"
+			"graph_path": "data/FB15k-237-QAR/valid_kg.tsv"
 		},
 
 		"temperature": 20,

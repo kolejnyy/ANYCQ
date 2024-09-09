@@ -75,8 +75,8 @@ def test_reasoner(config_path):
 
 
 config_paths = [
-	# 'configs/reasoners/fit_fb15k-237.json',
-	# 'configs/reasoners/qto_fb15k-237.json'
+	'configs/reasoners/fit_fb15k-237.json',
+	'configs/reasoners/qto_fb15k-237.json',
 	'configs/reasoners/qto_nell.json',
 	'configs/reasoners/fit_nell.json'
 ] 

@@ -1,5 +1,5 @@
 {
-	"folder_path": 	"data/NELL-EFO1",
+	"folder_path": 	"data/NELL-QAC",
 	"data_files":	[
 		"qac_test_type0001.json",
 		"qac_test_type0002.json",
@@ -16,7 +16,7 @@
 		"type" : "CQPred",
 		"predictor": {
 			"type": "ComplEx",
-			"load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
+			"load_path": "models/NELL/predictor/ComplEx_pretrained.pth",
 			
 			"tau": 5,
 
@@ -27,7 +27,7 @@
 
 		"perfect": {
 			"type": "PerfeCT",
-			"graph_path": "data/NELL-EFO1/valid_kg.tsv"
+			"graph_path": "data/NELL-QAC/valid_kg.tsv"
 		},
 
 		"temperature": 20,
