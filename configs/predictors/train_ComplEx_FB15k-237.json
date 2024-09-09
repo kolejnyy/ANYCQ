@@ -1,0 +1,12 @@
+{	
+	"epochs": 500,
+	"batch_size": 1000,
+	"lr": 0.1,
+	"embedding_dim": 1000,
+	"reg_lambda": 0.05,
+	"rel_lambda": 4,
+	"model": "ComplEx",
+	"dataset_name": "FB15k-237-EFO1",
+	"val_interval": 10,
+	"save_interval": 10
+}

@@ -1,0 +1,58 @@
+{
+    "hidden_dim": 128,
+    "aggr_val2cst": "max",
+    "aggr_cst2val": "max",
+    "aggr_val2var": "max",
+    "sampling": "global",
+    "T_train": 12,
+    "T_val": 200,
+    "epochs": 500,
+    "epoch_steps": 1000,
+    "lr": 5e-06,
+    "lr_decay": 0.1,
+    "weight_decay": 0.0,
+    
+    "batch_size": 1,
+    "val_batch_size": [16, 8, 4],
+    
+    "loss_config": {
+        "discount": 0.75,
+        "reward": "improve"
+    },
+    
+    "train_data": {
+        "folder_path": 	"data/NELL-EFO1",
+        "data_file":	"train_qaa.json",
+        
+        "predictor": {
+            "type": "ComplEx",
+            "load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
+            
+            "tau": 4,
+
+            "n_relations": 400,
+            "n_entities": 63361,
+            "embedding_dim": 1000
+        }
+    },
+
+    "val_data": {
+        "folder_path": 	"data/NELL-EFO1",
+        "data_files":	[
+            "valid_type0000_real_EFO1_qaa.json",
+            "valid_type0001_real_EFO1_qaa.json",
+            "valid_type0002_real_EFO1_qaa.json"
+        ],
+        
+        "predictor": {
+            "type": "ComplEx",
+            "load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
+
+            "tau": 4,
+
+            "n_relations": 400,
+            "n_entities": 63361,
+            "embedding_dim": 1000
+        }   
+    }
+}

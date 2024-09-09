@@ -1,0 +1,31 @@
+{
+	"dataset": "FB15k-237-EFO1",
+	"n_relations": 474,
+	"n_entities": 14505,
+	
+	"predictor": {
+		
+		"type" : "CQPred",
+		"predictor": {
+			"type": "ComplEx",
+			"load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+			
+			"tau": 5,
+
+			"n_relations": 474,
+			"n_entities": 14505,
+			"embedding_dim": 1000
+		},
+
+		"perfect": {
+			"type": "PerfeCT",
+			"graph_path": "data/FB15k-237-EFO1/valid_kg.tsv"
+		},
+
+		"temperature": 2,
+		"scaling_rule": "qto",
+		"eps": 0.001
+	},
+
+	"test_temperatures": [20.0, 20.0, 20.0, 20.0, 20.0, 20.0]
+}

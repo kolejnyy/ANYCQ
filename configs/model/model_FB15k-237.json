@@ -1,0 +1,139 @@
+{
+    "hidden_dim": 128,
+    "aggr_val2cst": "max",
+    "aggr_cst2val": "max",
+    "aggr_val2var": "max",
+    "sampling": "global",
+    "T_train": 15,
+    "T_val": 300,
+    "epochs": 500,
+    "epoch_steps": 1000,
+    "val_interval": 1,
+    "lr": 5e-06,
+    "lr_decay": 0.1,
+    "weight_decay": 0.0,
+    
+    "batch_size": 4,
+    "val_batch_size": [60, 30, 20, 20, 20],
+    
+    "loss_config": {
+        "discount": 0.75,
+        "reward": "improve"
+    },
+    
+    "train_data": {
+        "folder_path": 	"data/FB15k-237-EFO1",
+        "data_file":	"train_qaa.json",
+        
+        "predictor": {
+            "type": "ComplEx",
+            "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+            
+            "tau": 5,
+
+            "n_relations": 474,
+            "n_entities": 14505,
+            "embedding_dim": 1000
+        }
+    },
+
+    "val_data": {
+        "folder_path": 	"data/FB15k-237-EFO1",
+        
+        "data_files":	[
+            "valid_type0009_real_EFO1_qaa.json",
+            "valid_type0010_real_EFO1_qaa.json",
+            "valid_type0011_real_EFO1_qaa.json"
+        ],
+        "data_file": "",
+        
+        "n_relations": 474,
+        "n_entities": 14505,
+        
+        "predictor": {
+            "type" : "BinCQPred",
+            "predictor": {
+                "type": "ComplEx",
+                "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+                
+                "tau": 5,
+
+                "n_relations": 474,
+                "n_entities": 14505,
+                "embedding_dim": 1000
+            },
+
+            "perfect": {
+                "type": "PerfeCT",
+                "graph_path": "data/FB15k-237-EFO1/train_kg.tsv"
+            },
+
+            "scaling_rule": "qto",
+            "eps": 0.001,
+            "threshold": 0.5,
+
+            "temperatures": [0.5, 0.5, 0.5],
+
+            "PE_paths": [
+                "models/FB15k-237-EFO1/reasoner_t0.5/qto/",
+                "models/FB15k-237-EFO1/reasoner_t0.5/qto/",
+                "models/FB15k-237-EFO1/reasoner_t0.5/qto/"
+            ]
+        }    
+    },
+
+    "test_data": {
+        "folder_path": 	"data/FB15k-237-EFO1",
+        
+        "data_files":	[
+            "test_type0001_real_EFO1_qaa.json",
+            "test_type0002_real_EFO1_qaa.json",
+            "test_type0005_real_EFO1_qaa.json",
+            "test_type0006_real_EFO1_qaa.json",
+            "test_type0009_real_EFO1_qaa.json",
+            "test_type0010_real_EFO1_qaa.json",
+            "test_type0012_real_EFO1_qaa.json"
+        ],
+        "data_file": "",
+        
+        "n_relations": 474,
+        "n_entities": 14505,
+        
+        "predictor": {
+            "type" : "BinCQPred",
+            "predictor": {
+                "type": "ComplEx",
+                "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+                
+                "tau": 5,
+
+                "n_relations": 474,
+                "n_entities": 14505,
+                "embedding_dim": 1000
+            },
+
+            "perfect": {
+                "type": "PerfeCT",
+                "graph_path": "data/FB15k-237-EFO1/valid_kg.tsv"
+            },
+
+            "scaling_rule": "qto",
+            "eps": 0.001,
+            "threshold": 0.5,
+            
+            "temperature": 1.0,
+            "temperatures": [0.5, 0.5, 1.0, 1.0, 0.5, 0.5, 0.5],
+
+            "PE_path": "models/FB15k-237-EFO1/reasoner_test_1.0/qto/",
+            "PE_paths": [
+                "models/FB15k-237-EFO1/reasoner_test_0.5/qto/",
+                "models/FB15k-237-EFO1/reasoner_test_0.5/qto/",
+                "models/FB15k-237-EFO1/reasoner_test_1.0/qto/",
+                "models/FB15k-237-EFO1/reasoner_test_1.0/qto/",
+                "models/FB15k-237-EFO1/reasoner_test_0.5/qto/",
+                "models/FB15k-237-EFO1/reasoner_test_0.5/qto/",
+                "models/FB15k-237-EFO1/reasoner_test_0.5/qto/"
+            ]
+        }    
+    }
+}

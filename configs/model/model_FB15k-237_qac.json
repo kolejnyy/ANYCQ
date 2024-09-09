@@ -1,0 +1,121 @@
+{
+    "hidden_dim": 128,
+    "aggr_val2cst": "max",
+    "aggr_cst2val": "max",
+    "aggr_val2var": "max",
+    "sampling": "global",
+    "T_train": 15,
+    "T_val": 300,
+    "epochs": 500,
+    "epoch_steps": 1000,
+    "val_interval": 1,
+    "lr": 5e-06,
+    "lr_decay": 0.1,
+    "weight_decay": 0.0,
+    
+    "batch_size": 4,
+    "val_batch_size": [60, 30, 20, 20, 20],
+    
+    "loss_config": {
+        "discount": 0.75,
+        "reward": "improve"
+    },
+
+    "val_data": {
+        "folder_path": 	"data/FB15k-237-QAC",
+        
+        "data_files":	[
+            "qac_valid_3piv.json",
+            "qac_valid_3piv.json",
+            "qac_valid_3piv.json",
+            "qac_valid_3piv.json"
+        ],
+        "data_file": "qac_test_3piv.json",
+
+        
+        "n_relations": 474,
+        "n_entities": 14505,
+        
+        "predictor": {
+            "type" : "SymCQPred",
+            "predictor": {
+                "type": "ComplEx",
+                "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+                
+                "tau": 5,
+
+                "n_relations": 474,
+                "n_entities": 14505,
+                "embedding_dim": 1000
+            },
+
+            "perfect": {
+                "type": "PerfeCT",
+                "graph_path": "data/FB15k-237-EFO1/test_kg.tsv"
+            },
+
+            "logDelta": "models/FB15k-237-EFO1/complex/logDelta_fit_t20.pt",
+            "scaling_rule": "fit",
+            "eps": 0.001,
+            "threshold": 0.5,
+            
+            "temperature": 20.0,
+            "temperatures":  [0.5, 1.0, 2.0, 20.0],
+            
+            "PE_paths": [
+                "models/FB15k-237-EFO1/reasoner_t0.5/fit/",
+                "models/FB15k-237-EFO1/reasoner_t1.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_t2.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_t20.0/fit/"
+            ]
+        }    
+    },
+
+    "test_data": {
+        "folder_path": 	"data/FB15k-237-QAC",
+        
+        "data_files":	[
+            "qac_test_3piv.json"
+        ],
+        "data_file": "",
+        
+        "n_relations": 474,
+        "n_entities": 14505,
+        
+        "predictor": {
+            "type" : "BinCQPred",
+            "predictor": {
+                "type": "ComplEx",
+                "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+                
+                "tau": 5,
+
+                "n_relations": 474,
+                "n_entities": 14505,
+                "embedding_dim": 1000
+            },
+
+            "perfect": {
+                "type": "PerfeCT",
+                "graph_path": "data/FB15k-237-EFO1/valid_kg.tsv"
+            },
+
+            "scaling_rule": "fit",
+            "eps": 0.001,
+            "threshold": 0.5,
+            
+            "temperature": 20.0,
+            "temperatures":  [20.0, 20.0, 20.0, 20.0, 20.0, 20.0],
+
+            "PE_path": "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+            "PE_paths": [
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/"
+            ]
+        }    
+    }
+}

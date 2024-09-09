@@ -1,0 +1,31 @@
+{
+	"dataset": "NELL-EFO1",
+	"n_relations": 400,
+	"n_entities": 63361,
+	
+	"predictor": {
+		
+		"type" : "CQPred",
+		"predictor": {
+			"type": "ComplEx",
+			"load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
+			
+			"tau": 4,
+
+			"n_relations": 400,
+			"n_entities": 63361,
+			"embedding_dim": 1000
+		},
+
+		"perfect": {
+			"type": "PerfeCT",
+			"graph_path": "data/NELL-EFO1/valid_kg.tsv"
+		},
+
+		"temperature": 2,
+		"scaling_rule": "fit",
+		"eps": 0.001
+	},
+
+	"test_temperatures": [20.0, 20.0, 20.0, 20.0, 2.0, 20.0]
+}
