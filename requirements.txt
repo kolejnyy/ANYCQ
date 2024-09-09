@@ -12,5 +12,6 @@ cnfgen
 pycsp3
 ijson
 matplotlib
-duckdb
+duckdb==1.0.0
 gdown
+pandas
