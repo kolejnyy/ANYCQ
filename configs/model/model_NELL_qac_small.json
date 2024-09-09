@@ -20,25 +20,9 @@
         "discount": 0.75,
         "reward": "improve"
     },
-    
-    "train_data": {
-        "folder_path": 	"data/FB15k-237-EFO1",
-        "data_file":	"train_qaa.json",
-        
-        "predictor": {
-            "type": "ComplEx",
-            "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
-            
-            "tau": 5,
-
-            "n_relations": 474,
-            "n_entities": 14505,
-            "embedding_dim": 1000
-        }
-    },
 
     "val_data": {
-        "folder_path": 	"data/FB15k-237-EFO1",
+        "folder_path": 	"data/NELL-QAC",
         
         "data_files":	[
             "qac_valid_type0001.json",
@@ -50,25 +34,25 @@
         ],
         "data_file": "",
         
-        "n_relations": 474,
-        "n_entities": 14505,
+        "n_relations": 400,
+        "n_entities": 63361,
         
         "predictor": {
             "type" : "BinCQPred",
             "predictor": {
                 "type": "ComplEx",
-                "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+                "load_path": "models/NELL/predictor/ComplEx_pretrained.pth",
                 
                 "tau": 5,
 
-                "n_relations": 474,
-                "n_entities": 14505,
+                "n_relations": 400,
+                "n_entities": 63361,
                 "embedding_dim": 1000
             },
 
             "perfect": {
                 "type": "PerfeCT",
-                "graph_path": "data/FB15k-237-EFO1/train_kg.tsv"
+                "graph_path": "data/NELL-QAC/train_kg.tsv"
             },
 
             "scaling_rule": "fit",
@@ -78,14 +62,14 @@
             "temperature": 1.0,
             "temperatures":  [20.0, 20.0, 20.0, 20.0, 20.0, 20.0],
 
-            "PE_path": "models/FB15k-237-EFO1/reasoner_t20.0/fit/",
+            "PE_path": "models/NELL/reasoner_t20.0/fit/",
             "PE_paths": [
-                "models/FB15k-237-EFO1/reasoner_t20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_t20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_t20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_t20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_t20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_t20.0/fit/"
+                "models/NELL/reasoner_t20.0/fit/",
+                "models/NELL/reasoner_t20.0/fit/",
+                "models/NELL/reasoner_t20.0/fit/",
+                "models/NELL/reasoner_t20.0/fit/",
+                "models/NELL/reasoner_t20.0/fit/",
+                "models/NELL/reasoner_t20.0/fit/"
             ]
         }    
     },
@@ -110,7 +94,7 @@
             "type" : "BinCQPred",
             "predictor": {
                 "type": "ComplEx",
-                "load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
+                "load_path": "models/NELL/predictor/ComplEx_pretrained.pth",
                 
                 "tau": 5,
 
@@ -121,7 +105,7 @@
 
             "perfect": {
                 "type": "PerfeCT",
-                "graph_path": "data/NELL-EFO1/valid_kg.tsv"
+                "graph_path": "data/NELL-QAC/valid_kg.tsv"
             },
 
             "scaling_rule": "qto",
@@ -131,14 +115,14 @@
             "temperature": 20.0,
             "temperatures":  [20.0, 20.0, 20.0, 20.0, 20.0, 20.0],
 
-            "PE_path": "models/NELL-EFO1/reasoner_test_20.0/qto/",
+            "PE_path": "models/NELL/reasoner_test_20.0/qto/",
             "PE_paths": [
-                "models/NELL-EFO1/reasoner_test_20.0/qto/",
-                "models/NELL-EFO1/reasoner_test_20.0/qto/",
-                "models/NELL-EFO1/reasoner_test_20.0/qto/",
-                "models/NELL-EFO1/reasoner_test_20.0/qto/",
-                "models/NELL-EFO1/reasoner_test_20.0/qto/",
-                "models/NELL-EFO1/reasoner_test_20.0/qto/"
+                "models/NELL/reasoner_test_20.0/qto/",
+                "models/NELL/reasoner_test_20.0/qto/",
+                "models/NELL/reasoner_test_20.0/qto/",
+                "models/NELL/reasoner_test_20.0/qto/",
+                "models/NELL/reasoner_test_20.0/qto/",
+                "models/NELL/reasoner_test_20.0/qto/"
             ]
         }    
     }

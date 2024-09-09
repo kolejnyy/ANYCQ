@@ -21,12 +21,12 @@
     },
     
     "train_data": {
-        "folder_path": 	"data/NELL-EFO1",
+        "folder_path": 	"data/NELL-QAR",
         "data_file":	"train_qaa.json",
         
         "predictor": {
             "type": "ComplEx",
-            "load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
+            "load_path": "models/NELL/predictor/ComplEx_pretrained.pth",
             
             "tau": 4,
 
@@ -34,25 +34,5 @@
             "n_entities": 63361,
             "embedding_dim": 1000
         }
-    },
-
-    "val_data": {
-        "folder_path": 	"data/NELL-EFO1",
-        "data_files":	[
-            "valid_type0000_real_EFO1_qaa.json",
-            "valid_type0001_real_EFO1_qaa.json",
-            "valid_type0002_real_EFO1_qaa.json"
-        ],
-        
-        "predictor": {
-            "type": "ComplEx",
-            "load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
-
-            "tau": 4,
-
-            "n_relations": 400,
-            "n_entities": 63361,
-            "embedding_dim": 1000
-        }   
     }
 }

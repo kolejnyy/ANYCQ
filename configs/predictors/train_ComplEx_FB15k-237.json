@@ -6,7 +6,7 @@
 	"reg_lambda": 0.05,
 	"rel_lambda": 4,
 	"model": "ComplEx",
-	"dataset_name": "FB15k-237-EFO1",
+	"dataset_name": "FB15k-237-QAR",
 	"val_interval": 10,
 	"save_interval": 10
 }

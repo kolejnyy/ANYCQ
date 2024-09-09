@@ -1,0 +1,38 @@
+{
+	"folder_path": 	"data/FB15k-237-EFO1",
+	"data_files":	[
+		"qac_valid_type0001.json",
+		"qac_valid_type0002.json",
+		"qac_valid_type0005.json",
+		"qac_valid_type0006.json",
+		"qac_valid_type0009.json",
+		"qac_valid_type0010.json"
+	],
+	
+	"n_relations": 474,
+	"n_entities": 14505,
+	
+	"predictor": {
+		"type" : "CQPred",
+		"predictor": {
+			"type": "ComplEx",
+			"load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+			
+			"tau": 5,
+
+			"n_relations": 474,
+			"n_entities": 14505,
+			"embedding_dim": 1000
+		},
+
+		"perfect": {
+			"type": "PerfeCT",
+			"graph_path": "data/FB15k-237-EFO1/valid_kg.tsv"
+		},
+
+		"temperature": 20,
+		"scaling_rule": "qto",
+		"eps": 0.001
+
+	}
+}

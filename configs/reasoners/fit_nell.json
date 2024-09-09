@@ -1,5 +1,5 @@
 {
-	"dataset": "NELL-EFO1",
+	"dataset": "NELL",
 	"n_relations": 400,
 	"n_entities": 63361,
 	
@@ -8,7 +8,7 @@
 		"type" : "CQPred",
 		"predictor": {
 			"type": "ComplEx",
-			"load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
+			"load_path": "models/NELL/predictor/ComplEx_pretrained.pth",
 			
 			"tau": 4,
 
@@ -19,7 +19,7 @@
 
 		"perfect": {
 			"type": "PerfeCT",
-			"graph_path": "data/NELL-EFO1/valid_kg.tsv"
+			"graph_path": "data/NELL-QAR/valid_kg.tsv"
 		},
 
 		"temperature": 2,

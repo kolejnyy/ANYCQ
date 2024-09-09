@@ -39,7 +39,7 @@
             "type" : "SignCQPred",
             "predictor": {
                 "type": "ComplEx",
-                "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+                "load_path": "models/FB15k-237/predictor/ComplEx_pretrained.pth",
                 
                 "tau": 5,
 
@@ -50,10 +50,10 @@
 
             "perfect": {
                 "type": "PerfeCT",
-                "graph_path": "data/FB15k-237-EFO1/train_kg.tsv"
+                "graph_path": "data/FB15k-237-QAR/train_kg.tsv"
             },
 
-            "logDelta": "models/FB15k-237-EFO1/complex/logDelta_fit_t20.pt",
+            "logDelta": "models/FB15k-237/complex/logDelta_fit_t20.pt",
             "scaling_rule": "fit",
             "eps": 0.001,
             "threshold": 0.5,
@@ -62,10 +62,10 @@
             "temperatures":  [20.0],
             
             "PE_paths": [
-                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/"
+                "models/FB15k-237/reasoner_test_20.0/fit/",
+                "models/FB15k-237/reasoner_test_20.0/fit/",
+                "models/FB15k-237/reasoner_test_20.0/fit/",
+                "models/FB15k-237/reasoner_test_20.0/fit/"
             ]
         }      
     },
@@ -87,7 +87,7 @@
             "type" : "SignCQPred",
             "predictor": {
                 "type": "ComplEx",
-                "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
+                "load_path": "models/FB15k-237/predictor/ComplEx_pretrained.pth",
                 
                 "tau": 5,
 
@@ -98,7 +98,7 @@
 
             "perfect": {
                 "type": "PerfeCT",
-                "graph_path": "data/FB15k-237-EFO1/valid_kg.tsv"
+                "graph_path": "data/FB15k-237-QAR/valid_kg.tsv"
             },
 
             "scaling_rule": "fit",
@@ -108,14 +108,14 @@
             "temperature": 20.0,
             "temperatures":  [20.0, 20.0, 20.0, 20.0, 20.0, 20.0],
 
-            "PE_path": "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+            "PE_path": "models/FB15k-237/reasoner_test_20.0/fit/",
             "PE_paths": [
-                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
-                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/"
+                "models/FB15k-237/reasoner_test_20.0/fit/",
+                "models/FB15k-237/reasoner_test_20.0/fit/",
+                "models/FB15k-237/reasoner_test_20.0/fit/",
+                "models/FB15k-237/reasoner_test_20.0/fit/",
+                "models/FB15k-237/reasoner_test_20.0/fit/",
+                "models/FB15k-237/reasoner_test_20.0/fit/"
             ]
         }    
     }

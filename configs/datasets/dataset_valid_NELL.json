@@ -1,0 +1,37 @@
+{
+	"folder_path": 	"data/NELL-EFO1",
+	"data_files":	[
+		"qac_valid_type0001.json",
+		"qac_valid_type0002.json",
+		"qac_valid_type0005.json",
+		"qac_valid_type0006.json",
+		"qac_valid_type0009.json",
+		"qac_valid_type0010.json"
+	],
+	
+	"n_relations": 400,
+	"n_entities": 63361,
+
+	"predictor": {
+		"type" : "CQPred",
+		"predictor": {
+			"type": "ComplEx",
+			"load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
+			
+			"tau": 5,
+
+			"n_relations": 400,
+			"n_entities": 63361,
+			"embedding_dim": 1000
+		},
+
+		"perfect": {
+			"type": "PerfeCT",
+			"graph_path": "data/NELL-EFO1/valid_kg.tsv"
+		},
+
+		"temperature": 20,
+		"scaling_rule": "fit",
+		"eps": 0.001
+	}
+}

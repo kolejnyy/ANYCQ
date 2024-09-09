@@ -39,7 +39,7 @@
             "type" : "SignCQPred",
             "predictor": {
                 "type": "ComplEx",
-                "load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
+                "load_path": "models/NELL/predictor/ComplEx_pretrained.pth",
                 
                 "tau": 5,
 
@@ -50,7 +50,7 @@
 
             "perfect": {
                 "type": "PerfeCT",
-                "graph_path": "data/NELL-EFO1/valid_kg.tsv"
+                "graph_path": "data/NELL-QAR/valid_kg.tsv"
             },
 
             "scaling_rule": "qto",
@@ -58,15 +58,8 @@
             "threshold": 0.5,
             
             "temperature": 1.0,
-            "temperatures":  [0.5, 1.0, 2.0, 20.0],
+            "temperatures":  [0.5, 1.0, 2.0, 20.0]
 
-            "PE_path": "models/NELL-EFO1/reasoner_t1.0/qto/",
-            "PE_paths": [
-                "models/NELL-EFO1/reasoner_t0.5/qto/",
-                "models/NELL-EFO1/reasoner_t1.0/qto/",
-                "models/NELL-EFO1/reasoner_t2.0/qto/",
-                "models/NELL-EFO1/reasoner_t20.0/qto/"
-            ]
         }    
     },
 
@@ -87,7 +80,7 @@
             "type" : "BinCQPred",
             "predictor": {
                 "type": "ComplEx",
-                "load_path": "models/NELL-EFO1/predictor/ComplEx_pretrained.pth",
+                "load_path": "models/NELL/predictor/ComplEx_pretrained.pth",
                 
                 "tau": 5,
 
@@ -98,7 +91,7 @@
 
             "perfect": {
                 "type": "PerfeCT",
-                "graph_path": "data/NELL-EFO1/valid_kg.tsv"
+                "graph_path": "data/NELL-QAR/valid_kg.tsv"
             },
 
             "scaling_rule": "qto",
@@ -106,16 +99,13 @@
             "threshold": 0.5,
             
             "temperature": 20.0,
-            "temperatures":  [20.0, 20.0, 20.0, 20.0, 20.0, 20.0],
+            "temperatures":  [20.0, 20.0, 20.0],
 
-            "PE_path": "models/NELL-EFO1/reasoner_test_20.0/qto/",
+            "PE_path": "models/NELL/reasoner_test_20.0/qto/",
             "PE_paths": [
-                "models/NELL-EFO1/reasoner_test_20.0/qto/",
-                "models/NELL-EFO1/reasoner_test_20.0/qto/",
-                "models/NELL-EFO1/reasoner_test_20.0/qto/",
-                "models/NELL-EFO1/reasoner_test_20.0/qto/",
-                "models/NELL-EFO1/reasoner_test_20.0/qto/",
-                "models/NELL-EFO1/reasoner_test_20.0/qto/"
+                "models/NELL/reasoner_test_20.0/qto/",
+                "models/NELL/reasoner_test_20.0/qto/",
+                "models/NELL/reasoner_test_20.0/qto/"
             ]
         }    
     }
