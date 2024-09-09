@@ -25,10 +25,10 @@
         "folder_path": 	"data/NELL-QAR",
         
         "data_files":	[
-            "qar_valid_3piv_efo1.json",
-            "qar_valid_3piv_efo1.json",
-            "qar_valid_3piv_efo1.json",
-            "qar_valid_3piv_efo1.json"
+            "qar_valid_3hub_efo1.json",
+            "qar_valid_3hub_efo1.json",
+            "qar_valid_3hub_efo1.json",
+            "qar_valid_3hub_efo1.json"
         ],
         "data_file": "",
         
@@ -67,9 +67,9 @@
         "folder_path": 	"data/NELL-QAR",
         
         "data_files":	[
-            "qac_test_3piv_efo1.json",
-            "qac_test_3piv_efo2.json",
-            "qac_test_3piv_efo3.json"
+            "qac_test_3hub_efo1.json",
+            "qac_test_3hub_efo2.json",
+            "qac_test_3hub_efo3.json"
         ],
         "data_file": "",
         

@@ -36,7 +36,7 @@ def refine_answers(dataset, kg_name, split, gen_type, mod10, timeout):
 	duckdb.sql("INSERT INTO graph SELECT * FROM kg_graph")
 
 	# Load the VCQ data
-	with open(f"data/{dataset}/vcq_{split}_{gen_type}piv.json", 'r') as f: 
+	with open(f"data/{dataset}/vcq_{split}_{gen_type}hub.json", 'r') as f: 
 		data = json.load(f)
 
 	cq_types = list(data.keys())
@@ -50,7 +50,7 @@ def refine_answers(dataset, kg_name, split, gen_type, mod10, timeout):
 	
 		answer_dict = {cq_type: [[grounding, ans, tim]] for cq_type, grounding, ans, tim in answers}
 
-		with open(f'data/{dataset}/vcq_{split}_{gen_type}piv_{kg_name}_{mod10}.json', 'w') as f:
+		with open(f'data/{dataset}/vcq_{split}_{gen_type}hub_{kg_name}_{mod10}.json', 'w') as f:
 			json.dump(answer_dict, f)
 
 

@@ -8,7 +8,7 @@ from time import time
 
 dataset_name = 'FB15k-237-EFO1'
 split = 'test'
-gen_type = '5piv'
+gen_type = '5hub'
 fnum = 'efo3'
 
 kg_name = 'valid_kg.tsv' if split == 'test' else 'train_kg.tsv' 

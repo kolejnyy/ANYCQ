@@ -7,7 +7,7 @@ from time import time
 
 
 dataset_name = 'NELL-QAR'
-gen_type = '5piv'
+gen_type = '5hub'
 arity = 'efo1'
 ent_num = 63361
 

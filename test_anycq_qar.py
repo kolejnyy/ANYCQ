@@ -44,9 +44,9 @@ def test_qar(config_file, model_dir, model_name, n_pivots, exp_name, no_PE, only
 		f.write("Only negative: "+str(only_neg)+'\n')
 
 	data_files = [
-		f"qar_test_{n_pivots}piv_efo1.json",
-		f"qar_test_{n_pivots}piv_efo2.json",
-		f"qar_test_{n_pivots}piv_efo3.json"
+		f"qar_test_{n_pivots}hub_efo1.json",
+		f"qar_test_{n_pivots}hub_efo2.json",
+		f"qar_test_{n_pivots}hub_efo3.json"
 	]
 
 	for val_id, data_file in enumerate(data_files):

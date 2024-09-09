@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
 	parser = ArgumentParser()
 	parser.add_argument("--dataset", type=str, help="Dataset name")
-	parser.add_argument("--gen_type", type=str, help="3/4/5-piv")
+	parser.add_argument("--gen_type", type=str, help="3/4/5-hub")
 	args = parser.parse_args()
 
 	dataset = args.dataset

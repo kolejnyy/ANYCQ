@@ -25,9 +25,9 @@
         "folder_path": 	"data/NELL-QAC",
         
         "data_files":	[
-            "qac_valid_3piv.json",
-            "qac_valid_4piv.json",
-            "qac_valid_5piv.json"
+            "qac_valid_3hub.json",
+            "qac_valid_4hub.json",
+            "qac_valid_5hub.json"
         ],
         "data_file": "",
         
@@ -66,9 +66,9 @@
         "folder_path": 	"data/NELL-QAC",
         
         "data_files":	[
-            "qac_test_3piv.json",
-            "qac_test_4piv.json",
-            "qac_test_5piv.json"
+            "qac_test_3hub.json",
+            "qac_test_4hub.json",
+            "qac_test_5hub.json"
         ],
         "data_file": "",
         

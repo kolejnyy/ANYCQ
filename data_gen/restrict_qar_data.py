@@ -8,7 +8,7 @@ from time import time
 
 dataset_name = 'NELL-EFO1'
 split = 'test'
-gen_type = '5piv'
+gen_type = '5hub'
 
 kg_name = 'valid_kg.tsv' if split == 'test' else 'train_kg.tsv' 
 kg_graph = pd.read_csv(f'data/{dataset_name}/{kg_name}', sep='\t', header = None)

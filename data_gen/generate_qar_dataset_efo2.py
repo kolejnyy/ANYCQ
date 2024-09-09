@@ -99,4 +99,4 @@ if __name__ == "__main__":
 	parser.add_argument("--timeout", type=int, default = 60, help='Maximum number of seconds to process a query')
 	args = parser.parse_args()
 
-	generate_efo2_data(args.dataset, args.kg_name+'.tsv', args.split, str(args.n_pivots)+'piv', args.mod, args.timeout)
+	generate_efo2_data(args.dataset, args.kg_name+'.tsv', args.split, str(args.n_pivots)+'hub', args.mod, args.timeout)

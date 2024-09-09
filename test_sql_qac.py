@@ -112,15 +112,15 @@ if __name__ == "__main__":
 	duckdb.sql("INSERT INTO graph SELECT * FROM kg_graph")
 
 	data_names = [
-		# "qac_test_type0001.json",
-		# "qac_test_type0002.json",
-		# "qac_test_type0005.json",
-		# "qac_test_type0006.json",
+		"qac_test_type0001.json",
+		"qac_test_type0002.json",
+		"qac_test_type0005.json",
+		"qac_test_type0006.json",
 		"qac_test_type0009.json",
 		"qac_test_type0010.json",
-		# "qac_test_3piv.json"
-		# "qac_test_4piv.json"
-		# "qac_test_5piv.json"
+		"qac_test_3hub.json",
+		"qac_test_4hub.json",
+		"qac_test_5hub.json"
 	]
 
 	for data_name in data_names:

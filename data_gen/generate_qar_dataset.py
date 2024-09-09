@@ -8,7 +8,7 @@ from time import time
 
 dataset_name = 'FB15k-237-EFO1'
 split = 'valid'
-gen_type = '3piv'
+gen_type = '3hub'
 
 kg_name = 'valid_kg.tsv' if split == 'test' else 'train_kg.tsv' 
 kg_graph = pd.read_csv(f'data/{dataset_name}/{kg_name}', sep='\t', header = None)

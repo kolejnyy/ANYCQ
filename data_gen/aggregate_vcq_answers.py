@@ -6,7 +6,7 @@ from time import time
 
 dataset_name = 'FB15k-237-EFO1'
 split = 'valid'
-gen_type = '3piv'
+gen_type = '3hub'
 
 full_dict = {}
 obs_dict = {}

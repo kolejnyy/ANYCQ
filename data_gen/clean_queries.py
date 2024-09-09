@@ -9,7 +9,7 @@ from time import time
 dataset_name = 'FB15k-237-EFO1'
 split = 'test'
 
-for gen_type in ['3piv', '4piv', '5piv']:
+for gen_type in ['3hub', '4hub', '5hub']:
 	for frees in ['efo1', 'efo2', 'efo3']:
 
 		with open(f'data/{dataset_name}/qar_{split}_{gen_type}_{frees}.json', 'r') as f:
