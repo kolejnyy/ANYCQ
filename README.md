@@ -93,10 +93,3 @@ Similarly, to the performance on the QAR benchmarks, execute:
 # For dataset FB15k-237-QAR and the split 3hub:
 python test_sql_qar.py --dataset FB15k-237 --gen_type 3hub
 ```
-
-## Testing QTO/FIT
-
-The neuro-symbolic CQA approaches QTO and FIT can be tested on the small QAC splits using the script:
-```
-python test_reasoners_qac.py
-```

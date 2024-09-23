@@ -1,4 +1,6 @@
 *.pyc
 *train_qaa.json
+*.zip
 
 models/*
+logs/*
