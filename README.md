@@ -1,6 +1,6 @@
 # One Model Any Conjunctive Query
 
-This repository contains codebase for the paper "One Model, Any Conjunctive Query: Graph Neural Networks for Answering Complex Queries over Knowledge Graphs". The code is based on [ANYCSP](https://github.com/toenshoff/ANYCSP).
+This repository contains codebase for the paper "One Model, Any Conjunctive Query: Graph Neural Networks for Answering Complex Queries over Incomplete Knowledge Graphs". The code is based on [ANYCSP](https://github.com/toenshoff/ANYCSP).
 
 ## Setting up the environment
 
