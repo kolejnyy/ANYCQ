@@ -1,0 +1,1 @@
+python test_anycq_qac.py --model_dir "models/NELL-EFO1/anycq/" --model_name "_checkpoint_200000" --config_file "configs/model/ultra/model_NELL_qac_ultra.json" --exp_name "Ultra_QAC_Test_NELL_3hub_" --gen_type 3piv

@@ -1,0 +1,103 @@
+{
+    "hidden_dim": 128,
+    "aggr_val2cst": "max",
+    "aggr_cst2val": "max",
+    "aggr_val2var": "max",
+    "sampling": "global",
+    "T_train": 15,
+    "T_val": 300,
+    "epochs": 500,
+    "epoch_steps": 1000,
+    "val_interval": 1,
+    "lr": 5e-06,
+    "lr_decay": 0.1,
+    "weight_decay": 0.0,
+    
+    "batch_size": 4,
+    "val_batch_size": [60, 30, 20, 20, 20],
+    
+    "loss_config": {
+        "discount": 0.75,
+        "reward": "improve"
+    },
+
+    "val_data": {
+        "folder_path": 	"data/FB15k-237-QAR",
+        
+        "data_files":	[
+            "qar_valid_3piv_efo1.json",
+            "qar_valid_3piv_efo1.json",
+            "qar_valid_3piv_efo1.json",
+            "qar_valid_3piv_efo1.json"
+        ],
+        "data_file": "qar_valid_3piv_efo1.json",
+        
+        "n_relations": 474,
+        "n_entities": 14505,
+        
+        "predictor": {
+            "type": "MatrixPred",
+            "data_path": "models/FB15k-237-EFO1/ultra3g",
+            "n_relations": 474,
+            "n_entities": 14505,
+            
+            "eps": 0.001,
+            "threshold": 0.5,
+            
+            "temperature": 20.0,
+            "temperatures":  [20.0],
+            
+            "PE_paths": [
+                "models/FB15k-237-EFO1/ultra3g/",
+                "models/FB15k-237-EFO1/ultra3g/",
+                "models/FB15k-237-EFO1/ultra3g/",
+                "models/FB15k-237-EFO1/ultra3g/"
+            ]
+        }      
+    },
+
+    "test_data": {
+        "folder_path": 	"data/FB15k-237-QAR",
+        
+        "data_files":	[
+            "qac_test_3piv_efo1.json",
+            "qac_test_3piv_efo2.json",
+            "qac_test_3piv_efo3.json"
+        ],
+        "data_file": "qar_test_3piv_efo1.json",
+        
+        "n_relations": 474,
+        "n_entities": 14505,
+        
+        "predictor": {
+            "type" : "PerCQPred",
+            "predictor": {
+                "type": "MatrixPred",
+                "data_path": "models/FB15k-237-EFO1/ultra3g",
+                "n_relations": 474,
+                "n_entities": 14505
+            },
+
+            "perfect": {
+                "type": "PerfeCT",
+                "graph_path": "data/FB15k-237-QAR/valid_kg.tsv"
+            },
+
+            "eps": 0.001,
+            "threshold": 0.5,
+            
+            "temperature": 20.0,
+            "temperatures":  [20.0, 20.0, 20.0, 20.0, 20.0, 20.0],
+
+            "PE_path": "models/FB15k-237-EFO1/ultra3g/",
+            "PE_paths": [
+                "models/FB15k-237-EFO1/ultra3g/",
+                "models/FB15k-237-EFO1/ultra3g/",
+                "models/FB15k-237-EFO1/ultra3g/",
+                "models/FB15k-237-EFO1/ultra3g/",
+                "models/FB15k-237-EFO1/ultra3g/",
+                "models/FB15k-237-EFO1/ultra3g/"
+            ]
+        }     
+    }
+}

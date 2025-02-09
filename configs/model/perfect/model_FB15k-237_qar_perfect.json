@@ -25,9 +25,9 @@
         "folder_path": 	"data/FB15k-237-QAR",
         
         "data_files":	[
-            "qar_valid_3hub_efo1.json"
+            "qar_valid_3piv_efo1.json"
         ],
-        "data_file": "qar_valid_3hub_efo1.json",
+        "data_file": "qar_valid_3piv_efo1.json",
         
         "n_relations": 474,
         "n_entities": 14505,
@@ -36,13 +36,13 @@
         "predictor": {
             
             "type": "PerfeCT",
-            "graph_path": "data/FB15k-237-QAR/valid_kg.tsv",
+            "graph_path": "data/FB15k-237-EFO1/valid_kg.tsv",
 
             "temperatures":  [20.0, 20.0, 20.0, 20.0, 20.0, 20.0],
         
-            "PE_path": "models/FB15k-237/reasoner_perfect_test/qto/",
+            "PE_path": "models/FB15k-237-EFO1/reasoner_perfect_test/qto/",
             "PE_paths": [
-                "models/FB15k-237/reasoner_perfect_test/qto/"
+                "models/FB15k-237-EFO1/reasoner_perfect_test/qto/"
             ]
         }    
     },
@@ -51,11 +51,11 @@
         "folder_path": 	"data/FB15k-237-QAR",
         
         "data_files":	[
-            "qac_test_3hub_efo1.json",
-            "qac_test_3hub_efo2.json",
-            "qac_test_3hub_efo3.json"
+            "qac_test_3piv_efo1.json",
+            "qac_test_3piv_efo2.json",
+            "qac_test_3piv_efo3.json"
         ],
-        "data_file": "qar_test_3hub_efo1.json",
+        "data_file": "qar_test_3piv_efo1.json",
         
         "n_relations": 474,
         "n_entities": 14505,
@@ -63,15 +63,15 @@
         "predictor": {
             
             "type": "PerfeCT",
-            "graph_path": "data/FB15k-237-QAR/test_kg.tsv",
+            "graph_path": "data/FB15k-237-EFO1/test_kg.tsv",
         
             "temperatures":  [20.0, 20.0, 20.0, 20.0, 20.0, 20.0],
 
-            "PE_path": "models/FB15k-237/reasoner_perfect_test/qto/",
+            "PE_path": "models/FB15k-237-EFO1/reasoner_perfect_test/qto/",
             "PE_paths": [
-                "models/FB15k-237/reasoner_perfect_test/qto/",
-                "models/FB15k-237/reasoner_perfect_test/qto/",
-                "models/FB15k-237/reasoner_perfect_test/qto/"
+                "models/FB15k-237-EFO1/reasoner_perfect_test/qto/",
+                "models/FB15k-237-EFO1/reasoner_perfect_test/qto/",
+                "models/FB15k-237-EFO1/reasoner_perfect_test/qto/"
             ]
         }     
     }

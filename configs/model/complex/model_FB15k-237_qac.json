@@ -22,24 +22,25 @@
     },
 
     "val_data": {
-        "folder_path": 	"data/FB15k-237-QAR",
+        "folder_path": 	"data/FB15k-237-QAC",
         
         "data_files":	[
-            "qar_valid_3hub_efo1.json",
-            "qar_valid_3hub_efo1.json",
-            "qar_valid_3hub_efo1.json",
-            "qar_valid_3hub_efo1.json"
+            "qac_valid_3piv.json",
+            "qac_valid_3piv.json",
+            "qac_valid_3piv.json",
+            "qac_valid_3piv.json"
         ],
-        "data_file": "qar_valid_3hub_efo1.json",
+        "data_file": "qac_test_3piv.json",
+
         
         "n_relations": 474,
         "n_entities": 14505,
         
         "predictor": {
-            "type" : "SignCQPred",
+            "type" : "SymCQPred",
             "predictor": {
                 "type": "ComplEx",
-                "load_path": "models/FB15k-237/predictor/ComplEx_pretrained.pth",
+                "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
                 
                 "tau": 5,
 
@@ -50,33 +51,31 @@
 
             "perfect": {
                 "type": "PerfeCT",
-                "graph_path": "data/FB15k-237-QAR/train_kg.tsv"
+                "graph_path": "data/FB15k-237-QAC/test_kg.tsv"
             },
 
-            "logDelta": "models/FB15k-237/complex/logDelta_fit_t20.pt",
+            "logDelta": "models/FB15k-237-EFO1/complex/logDelta_fit_t20.pt",
             "scaling_rule": "fit",
             "eps": 0.001,
             "threshold": 0.5,
             
             "temperature": 20.0,
-            "temperatures":  [20.0],
+            "temperatures":  [0.5, 1.0, 2.0, 20.0],
             
             "PE_paths": [
-                "models/FB15k-237/reasoner_test_20.0/fit/",
-                "models/FB15k-237/reasoner_test_20.0/fit/",
-                "models/FB15k-237/reasoner_test_20.0/fit/",
-                "models/FB15k-237/reasoner_test_20.0/fit/"
+                "models/FB15k-237-EFO1/reasoner_t0.5/fit/",
+                "models/FB15k-237-EFO1/reasoner_t1.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_t2.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_t20.0/fit/"
             ]
-        }      
+        }    
     },
 
     "test_data": {
-        "folder_path": 	"data/FB15k-237-QAR",
+        "folder_path": 	"data/FB15k-237-QAC",
         
         "data_files":	[
-            "qac_test_3hub_efo1.json",
-            "qac_test_3hub_efo2.json",
-            "qac_test_3hub_efo3.json"
+            "qac_test_3piv.json"
         ],
         "data_file": "",
         
@@ -84,10 +83,10 @@
         "n_entities": 14505,
         
         "predictor": {
-            "type" : "SignCQPred",
+            "type" : "BinCQPred",
             "predictor": {
                 "type": "ComplEx",
-                "load_path": "models/FB15k-237/predictor/ComplEx_pretrained.pth",
+                "load_path": "models/FB15k-237-EFO1/predictor/ComplEx_pretrained.pth",
                 
                 "tau": 5,
 
@@ -98,7 +97,7 @@
 
             "perfect": {
                 "type": "PerfeCT",
-                "graph_path": "data/FB15k-237-QAR/valid_kg.tsv"
+                "graph_path": "data/FB15k-237-QAC/valid_kg.tsv"
             },
 
             "scaling_rule": "fit",
@@ -108,14 +107,14 @@
             "temperature": 20.0,
             "temperatures":  [20.0, 20.0, 20.0, 20.0, 20.0, 20.0],
 
-            "PE_path": "models/FB15k-237/reasoner_test_20.0/fit/",
+            "PE_path": "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
             "PE_paths": [
-                "models/FB15k-237/reasoner_test_20.0/fit/",
-                "models/FB15k-237/reasoner_test_20.0/fit/",
-                "models/FB15k-237/reasoner_test_20.0/fit/",
-                "models/FB15k-237/reasoner_test_20.0/fit/",
-                "models/FB15k-237/reasoner_test_20.0/fit/",
-                "models/FB15k-237/reasoner_test_20.0/fit/"
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/",
+                "models/FB15k-237-EFO1/reasoner_test_20.0/fit/"
             ]
         }    
     }

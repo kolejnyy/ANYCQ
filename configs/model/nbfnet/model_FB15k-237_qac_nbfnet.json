@@ -25,48 +25,53 @@
         "folder_path": 	"data/FB15k-237-QAC",
         
         "data_files":	[
-            "qac_valid_3hub.json"
+            "qac_valid_3piv.json",
+            "qac_valid_3piv.json",
+            "qac_valid_3piv.json",
+            "qac_valid_3piv.json"
         ],
-        "data_file": "qac_test_3hub.json",
+        "data_file": "qac_valid_3piv.json",
 
         
         "n_relations": 474,
         "n_entities": 14505,
         
         "predictor": {
-            "type" : "SymCQPred",
+            "type" : "PerCQPred",
             "predictor": {
-                "type": "ComplEx",
-                "load_path": "models/FB15k-237/predictor/ComplEx_pretrained.pth",
-                
-                "tau": 5,
-
+                "type": "MatrixPred",
+                "data_path": "models/FB15k-237-EFO1/nbfnet",
                 "n_relations": 474,
-                "n_entities": 14505,
-                "embedding_dim": 1000
+                "n_entities": 14505
             },
 
             "perfect": {
                 "type": "PerfeCT",
-                "graph_path": "data/FB15k-237-QAC/test_kg.tsv"
+                "graph_path": "data/FB15k-237-QAC/train_kg.tsv"
             },
 
-            "logDelta": "models/FB15k-237/complex/logDelta_fit_t20.pt",
-            "scaling_rule": "fit",
             "eps": 0.001,
             "threshold": 0.5,
             
             "temperature": 20.0,
-            "temperatures":  [0.5, 1.0, 2.0, 20.0]
+            "temperatures":  [20.0],
             
-        }    
+            "PE_paths": [
+                "models/FB15k-237-EFO1/nbfnet/",
+                "models/FB15k-237-EFO1/nbfnet/",
+                "models/FB15k-237-EFO1/nbfnet/",
+                "models/FB15k-237-EFO1/nbfnet/"
+            ]
+        }   
     },
 
     "test_data": {
         "folder_path": 	"data/FB15k-237-QAC",
         
         "data_files":	[
-            "qac_test_3hub.json"
+            "qac_test_3piv.json",
+            "qac_test_4piv.json",
+            "qac_test_5piv.json"
         ],
         "data_file": "",
         
@@ -74,16 +79,12 @@
         "n_entities": 14505,
         
         "predictor": {
-            "type" : "BinCQPred",
+            "type" : "PerCQPred",
             "predictor": {
-                "type": "ComplEx",
-                "load_path": "models/FB15k-237/predictor/ComplEx_pretrained.pth",
-                
-                "tau": 5,
-
+                "type": "MatrixPred",
+                "data_path": "models/FB15k-237-EFO1/nbfnet",
                 "n_relations": 474,
-                "n_entities": 14505,
-                "embedding_dim": 1000
+                "n_entities": 14505
             },
 
             "perfect": {
@@ -91,17 +92,18 @@
                 "graph_path": "data/FB15k-237-QAC/valid_kg.tsv"
             },
 
-            "scaling_rule": "fit",
             "eps": 0.001,
             "threshold": 0.5,
             
             "temperature": 20.0,
-            "temperatures":  [20.0],
+            "temperatures":  [20.0, 20.0, 20.0, 20.0, 20.0, 20.0],
 
-            "PE_path": "models/FB15k-237/reasoner_test_20.0/fit/",
+            "PE_path": "models/FB15k-237-EFO1/nbfnet/",
             "PE_paths": [
-                "models/FB15k-237/reasoner_test_20.0/fit/"
+                "models/FB15k-237-EFO1/nbfnet/",
+                "models/FB15k-237-EFO1/nbfnet/",
+                "models/FB15k-237-EFO1/nbfnet/"
             ]
-        }    
+        }     
     }
 }

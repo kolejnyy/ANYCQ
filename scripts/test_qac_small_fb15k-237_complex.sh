@@ -1,0 +1,1 @@
+python test_anycq_qac_small.py --model_dir "models/FB15k-237-EFO1/anycq/" --model_name "_checkpoint_350000" --config_file "configs/model/complex/model_FB15k-237_qac_small.json" --exp_name "ComplEx_QAC_small_Test_FB15k237_"

@@ -1,0 +1,1 @@
+python test_anycq_qar.py --model_dir "models/NELL-EFO1/anycq/" --model_name "_checkpoint_200000" --config_file "configs/model/nbfnet/model_FB15k-237_qar_nbfnet.json" --exp_name "NBFNet_QAR_FB15k-237_4piv_wNELL_" --n_pivots 3
