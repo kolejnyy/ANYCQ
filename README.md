@@ -93,3 +93,14 @@ Similarly, to the performance on the QAR benchmarks, execute:
 # For dataset FB15k-237-QAR and the split 3hub:
 python test_sql_qar.py --dataset FB15k-237 --gen_type 3hub
 ```
+
+## Citation
+```bibtex
+@inproceedings{
+  olejniczak2025one,
+  title={One Model, Any Conjunctive Query: Graph Neural Networks for Answering  Queries over Incomplete Knowledge Graphs},
+  author={Krzysztof Olejniczak and Xingyue Huang and Mikhail Galkin and Ismail Ilkan Ceylan},
+  booktitle={The Fourth Learning on Graphs Conference},
+  year={2025},
+}
+```
